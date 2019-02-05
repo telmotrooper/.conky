@@ -1,0 +1,67 @@
+# **********************************************************************
+# "CPU Panel (8-core)" theme for Conky by Tony George (teejee2008@gmail.com)
+#
+# Webpage: http://teejeetech.blogspot.in/
+# **********************************************************************
+
+
+background yes
+double_buffer yes
+
+alignment top_right
+
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+
+gap_x 225
+gap_y 25
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_colour 000000
+own_window_argb_visual no
+own_window_argb_value 0
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+minimum_size 170 0
+stippled_borders 0
+update_interval 2.0
+uppercase no
+use_spacer none
+
+show_graph_scale no
+show_graph_range no
+
+use_xft yes
+xftalpha 0.1
+xftfont Droid Sans:size=10
+color0 white
+color1 white
+color2 white
+color3 white
+
+TEXT
+$alignc ${exec whoami} @ ${nodename}
+
+Distro: $alignr ${exec cat /etc/*-release | grep -oP 'PRETTY_NAME="\K[^"]+'}
+
+Kernel: $alignr ${kernel}
+
+Uptime: $alignr ${uptime}
+
+Storage: $alignr ${fs_used} / ${fs_size}
+${fs_bar}
+
