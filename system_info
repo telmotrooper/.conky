@@ -64,4 +64,5 @@ Uptime: $alignr ${uptime}
 
 Storage: $alignr ${fs_used} / ${fs_size}
 ${fs_bar}
+Available space: $alignr ${fs_free}
 
