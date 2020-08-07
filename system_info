@@ -1,59 +1,55 @@
-# **********************************************************************
-# "CPU Panel (8-core)" theme for Conky by Tony George (teejee2008@gmail.com)
-#
-# Webpage: http://teejeetech.blogspot.in/
-# **********************************************************************
+conky.config = {
+	background = true,
+	double_buffer = true,
 
+	alignment = 'top_right',
 
-background yes
-double_buffer yes
+	border_width = 1,
+	cpu_avg_samples = 2,
+	default_color = 'white',
+	default_outline_color = 'white',
+	default_shade_color = 'white',
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_outline = false,
+	draw_shades = false,
 
-alignment top_right
+	gap_x = 225,
+	gap_y = 25,
+	net_avg_samples = 2,
+	no_buffers = true,
+	out_to_console = false,
+	out_to_stderr = false,
+	extra_newline = false,
 
-border_width 1
-cpu_avg_samples 2
-default_color white
-default_outline_color white
-default_shade_color white
-draw_borders no
-draw_graph_borders yes
-draw_outline no
-draw_shades no
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = true,
+	own_window_colour = '#000000',
+	own_window_argb_visual = false,
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
-gap_x 225
-gap_y 25
-net_avg_samples 2
-no_buffers yes
-out_to_console no
-out_to_stderr no
-extra_newline no
+	minimum_width = 170, minimum_height = 0,
+	stippled_borders = 0,
+	update_interval = 2.0,
+	uppercase = false,
+	use_spacer = 'none',
 
-own_window yes
-own_window_type desktop
-own_window_transparent yes
-own_window_colour 000000
-own_window_argb_visual no
-own_window_argb_value 0
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+	show_graph_scale = false,
+	show_graph_range = false,
 
-minimum_size 170 0
-stippled_borders 0
-update_interval 2.0
-uppercase no
-use_spacer none
+	use_xft = true,
+	xftalpha = 0.1,
+	font = 'Droid Sans:size=10',
+	color0 = 'white',
+	color1 = 'white',
+	color2 = 'white',
+	color3 = 'white',
 
-show_graph_scale no
-show_graph_range no
+};
 
-use_xft yes
-xftalpha 0.1
-xftfont Droid Sans:size=10
-color0 white
-color1 white
-color2 white
-color3 white
-
-TEXT
+conky.text = [[
 $alignc ${exec whoami} @ ${nodename}
 
 Distro: $alignr ${exec cat /etc/*-release | grep -oP 'PRETTY_NAME="\K[^"]+'}
@@ -62,7 +58,12 @@ Kernel: $alignr ${kernel}
 
 Uptime: $alignr ${uptime}
 
-Storage: $alignr ${fs_used} / ${fs_size}
+SSD: $alignr ${fs_used} / ${fs_size}
 ${fs_bar}
 Available space: $alignr ${fs_free}
 
+HDD: $alignr ${fs_used /mnt/hdd} / ${fs_size /mnt/hdd}
+${fs_bar /mnt/hdd}
+Available space: $alignr ${fs_free /mnt/hdd}
+
+]];
