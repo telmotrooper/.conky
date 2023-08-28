@@ -9,7 +9,7 @@
 For the widgets to start with your computer you have to add `~/.conky/run_conky.sh` to your startup applications. This process is different between desktop environments, it might be as simple as searching for "startup applications" in your menu and adding it to the list.
 
 ## My network stats (download, upload and local IP) do not show
-For these stats to work, you need to replace all the occurrences of "enp6s0" in "network_panel" with the name of your current network interface. You can find the names of the interfaces available with `ifconfig`, which you might or might not have installed.
+For these stats to work, you need to replace all the occurrences of "enp6s0" in "network_panel" with the name of your current network interface. You can find the names of the interfaces available with `ip -brief address`, which you might or might not have installed.
 
 ## Screenshot
 ![](https://raw.githubusercontent.com/telmotrooper/.conky/master/screenshot.png)
